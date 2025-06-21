@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="h1">Verificador de nome</h1>
+        <input id="nome" class="input" type="text" placeholder="Digite seu nome">
+        <button id="botao" onclick="verificar()" class="btn">Verificar</button>
+        <p id="resultado" class="P"></p>
+
+    </div>
+</body>
+
+</html>
+
+<style>
+    .h1 {
+        color: white;
+        transform: translateY(-85px);
+    }
+
+    .input {
+        font-size: 25px;
+        border-radius: 3%;
+        border-color: yellowgreen;
+        transform: translateY(-68px);
+    }
+
+
+    body {
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        background-color: black;
+    }
+
+    .container {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        background-color: black;
+        height: 450px;
+        width: 350px;
+        border-radius: 15px;
+        border-style: solid;
+        border-color: chartreuse;
+        box-shadow: 4px 4px 5px rgb(1, 190, 33);
+        flex-direction: column;
+    }
+
+    .P {
+        color: white;
+        font-size: 25px;
+        
+    }
+
+    .btn {
+        font-size: 25px;
+        border-radius: 5%;
+    cursor: pointer;
+    transition: 0.7s;
+    }
+       
+
+    .btn:hover {
+        background-color: green;
+    }
+</style>
+
+
+<script>
+function verificar(){
+let nome = document.getElementById("nome").value;
+let botao = document.getElementById("botao");
+let resultado = document.getElementById("resultado");
+
+if(nome){
+resultado.textContent = "Oi " + nome + ", tudo bem com voce?";
+}else{
+resultado.textContent = "por favor, insira seu nome para que possa ser verificado!";
+}
+
+}
+
+
+
+
+</script>

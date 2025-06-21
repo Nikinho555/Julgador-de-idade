@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="h1">Mente julgadora</h1>
+        <input class="inputname" placeholder="Digite sua idade" id="idade" type="number">
+        <button class="btnclass" onclick="idadeVerificador()" id="botao">Confirmar</button>
+        <p class="resultado" id="resultado"></p>
+    </div>
+
+</body>
+
+</html>
+
+<style>
+
+.h1{
+    text-align: center;
+    
+}
+
+.resultado{
+    color: rgb(3, 3, 3);
+    font-size: 30px;
+    text-align: center;
+}
+
+    .inputname {
+        font-size: 23px;
+        border-radius: 5px;
+    border-style: solid;
+    border-color: black;
+    }
+
+    body {
+        background-color: rgb(255, 249, 249);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btnclass {
+        border-style: solid;
+        border-color: black;
+        font-size: 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.6s;
+        color: white;
+        background-color: darkgray;
+    }
+
+    .btnclass:hover {
+        background-color: darkred;
+    }
+
+
+    .container {
+        gap: 10px;
+        box-shadow: 5px 5px 3px rgb(252, 0, 0);
+        border-style: solid;
+        border-color: black;
+        border-radius: 10px;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background-color: rgba(1, 118, 228, 0.877);
+        height: 350px;
+        width: 250px;
+    }
+</style>
+
+<script>
+    function idadeVerificador() {
+        let idade = document.getElementById("idade").value;
+        let botao = document.getElementById("botao");
+        let resultado = document.getElementById("resultado");
+
+        if (idade >= 1 && idade <= 5) {
+            resultado.textContent = "Você é uma criança anã!"
+        } else if (idade >= 6 && idade <= 9) {
+            resultado.textContent = "Você já está perturbado de atentado!"
+        } else if (idade >= 10 && idade <= 17) {
+            resultado.textContent = "Você entrou na puberdade ou esta no fim dela!"
+        } else if (idade >= 18 && idade <= 59) {
+            resultado.textContent = "Você é um adulto!"
+        } else if (idade >= 60 && idade <= 99) {
+            resultado.textContent = "Você é um idoso!"
+        } else if (idade >= 99 && idade <= 100000) {
+            resultado.textContent = "Você nem é velho mais, é IMORTAL!"
+        }else{
+            resultado.textContent = "Digite uma idade valido!"
+        }
+    }
+</script>

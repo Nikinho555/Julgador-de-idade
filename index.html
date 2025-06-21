@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projeto Organizado</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background-color: #2f4f4f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-section {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      transition: 0.3s ease;
+    }
+
+    input:focus {
+      border-color: cadetblue;
+      outline: none;
+    }
+
+    button {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      background-color: cadetblue;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #357c7c;
+      transform: scale(1.05);
+    }
+
+    p {
+      font-size: 16px;
+      color: #333;
+      text-align: center;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background-color: #ccc;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="form-section">
+      <input type="text" id="nome" placeholder="Digite seu nome" />
+      <button onclick="confirmIdade()">Confirmar Nome</button>
+      <p id="resultado"></p>
+    </div>
+
+    <hr />
+
+    <div class="form-section">
+      <input id="idade" type="number" placeholder="Digite sua idade" />
+      <button onclick="btnIdade()">Verificar Idade</button>
+      <p id="resultadoo"></p>
+    </div>
+  </div>
+
+  <script>
+    function confirmIdade() {
+      const nome = document.getElementById("nome").value;
+      const resultado = document.getElementById("resultado");
+
+      if (nome) {
+        resultado.textContent =
+          "Olá, " + nome + ", fico feliz que tenha testado o novo projeto simples.";
+      } else {
+        resultado.textContent = "Por favor, digite um nome para prosseguir!";
+      }
+    }
+
+    function btnIdade() {
+      const idade = parseInt(document.getElementById("idade").value);
+      const resultadoo = document.getElementById("resultadoo");
+
+      if (idade >= 1 && idade <= 10) {
+        resultadoo.textContent =
+          "Não, sem chance. O que uma criança quer tirar habilitação com " + idade + " ano(s)?";
+      } else if (idade >= 11 && idade <= 17) {
+        resultadoo.textContent = "Mais alguns anos e você já pode tirar a habilitação!";
+      } else if (idade >= 18 && idade <= 100) {
+        resultadoo.textContent = "Você tem idade mínima para tirar a habilitação!";
+      } else {
+        resultadoo.textContent = "Digite uma idade válida entre 1 e 100.";
+      }
+    }
+  </script>
+</body>
+
+</html>
